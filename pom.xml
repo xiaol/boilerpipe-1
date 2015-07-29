@@ -50,11 +50,11 @@
 			<artifactId>xercesImpl</artifactId>
 			<version>2.11.0</version>
 		</dependency>
-        <dependency>
+        <!--dependency>
             <groupId>org.ansj</groupId>
             <artifactId>ansj_seg</artifactId>
             <version>2.0.8</version>
-        </dependency>
+        </dependency-->
 	</dependencies>
 	<build>
 		<defaultGoal>package</defaultGoal>
@@ -181,12 +181,12 @@
 			</plugin>
 		</plugins>
 	</build>
-    <repositories>
+    <!--repositories>
         <repository>
             <id>mvn-repo</id>
             <url>http://maven.ansj.org/</url>
         </repository>
-    </repositories>
+    </repositories-->
 	<distributionManagement>
 		<repository>
 			<id>nexus-releases</id>

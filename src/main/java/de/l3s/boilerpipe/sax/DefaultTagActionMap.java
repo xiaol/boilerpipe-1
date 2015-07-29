@@ -41,6 +41,8 @@ public class DefaultTagActionMap extends TagActionMap {
         setTagAction("EMBED", CommonTagActions.TA_IGNORABLE_ELEMENT);
         setTagAction("APPLET", CommonTagActions.TA_IGNORABLE_ELEMENT);
         setTagAction("LINK", CommonTagActions.TA_IGNORABLE_ELEMENT);
+        setTagAction("TEXTAREA", CommonTagActions.TA_IGNORABLE_ELEMENT);
+        setTagAction("IFRAME", CommonTagActions.TA_IGNORABLE_ELEMENT);
 
         setTagAction("A", CommonTagActions.TA_ANCHOR_TEXT);
         setTagAction("BODY", CommonTagActions.TA_BODY);

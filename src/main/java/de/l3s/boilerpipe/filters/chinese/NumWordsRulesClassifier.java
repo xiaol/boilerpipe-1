@@ -78,11 +78,11 @@ public class NumWordsRulesClassifier implements BoilerpipeFilter {
             final TextBlock next) {
         final boolean isContent;
 
-        if (curr.getLinkDensity() <= 0.333333) {
-            if (prev.getLinkDensity() <= 0.555556) {
-                if (curr.getNumWords() <= 16) {
-                    if (next.getNumWords() <= 15) {
-                        if (prev.getNumWords() <= 4) {
+        if (curr.getLinkDensity() <= 0.333333 || curr.getTextDensity() >= 3.0) {
+            if ((prev.getLinkDensity() <= 0.555556  || prev.getTextDensity() >= 3.0) && curr.getNumWords() > 1) {
+                if (curr.getNumWords() <= 6) {
+                    if (next.getNumWords() <= 4) {
+                        if (prev.getNumWords() <= 1) {
                             isContent = false;
                         } else {
                             isContent = true;
@@ -94,8 +94,8 @@ public class NumWordsRulesClassifier implements BoilerpipeFilter {
                     isContent = true;
                 }
             } else {
-                if (curr.getNumWords() <= 40) {
-                    if (next.getNumWords() <= 17) {
+                if (curr.getNumWords() <= 6) {
+                    if (next.getNumWords() <= 5) {
                         isContent = false;
                     } else {
                         isContent = true;

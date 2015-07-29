@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import de.l3s.boilerpipe.util.ChineseTokenizer;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
@@ -316,7 +317,7 @@ public class BoilerpipeHTMLContentHandler implements ContentHandler {
 				return;
 			}
 		}
-		final String[] tokens = UnicodeTokenizer.tokenize(tokenBuffer);
+		final String[] tokens = ChineseTokenizer.tokenize(tokenBuffer);
 
 		int numWords = 0;
 		int numLinkedWords = 0;

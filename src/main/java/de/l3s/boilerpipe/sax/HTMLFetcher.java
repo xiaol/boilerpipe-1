@@ -47,11 +47,18 @@ public class HTMLFetcher {
 	 */
 	public static HTMLDocument fetch(final URL url) throws IOException {
 		final URLConnection conn = url.openConnection();
+        //conn.setRequestProperty("User-Agent",
+                //"Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19");
+        conn.setRequestProperty("User-Agent",
+              "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.104 Safari/537.36");
+        //conn.setRequestProperty("Cookie","wapparam=web2wap; vt=4");
 		final String ct = conn.getContentType();
 
 		if (ct == null
 				|| !(ct.equals("text/html") || ct.startsWith("text/html;"))) {
-			throw new IOException("Unsupported content type: "+ct);
+			//throw new IOException("Unsupported content type: "+ct+ url);
+            System.err.println("WARN: unsupported Content-type: "
+                    + ct + url);
 		}
 
 		Charset cs = Charset.forName("Cp1252");

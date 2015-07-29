@@ -48,7 +48,7 @@ public final class ChineseArticleExtractor extends ExtractorBase {
                 | NumWordsRulesClassifier.INSTANCE.process(doc)
                 | IgnoreBlocksAfterContentFilter.DEFAULT_INSTANCE.process(doc)
                 | TrailingHeadlineToBoilerplateFilter.INSTANCE.process(doc)
-                | BlockProximityFusion.MAX_DISTANCE_1.process(doc)
+                | BlockProximityFusion.MAX_DISTANCE_1_CONTENT_ONLY.process(doc)
                 | BoilerplateBlockFilter.INSTANCE_KEEP_TITLE.process(doc)
                 | BlockProximityFusion.MAX_DISTANCE_1_CONTENT_ONLY_SAME_TAGLEVEL.process(doc)
                 | KeepLargestBlockFilter.INSTANCE_EXPAND_TO_SAME_TAGLEVEL_MIN_WORDS.process(doc)

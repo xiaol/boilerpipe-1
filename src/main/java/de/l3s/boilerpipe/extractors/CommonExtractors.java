@@ -30,6 +30,7 @@ public final class CommonExtractors {
 	 * Works very well for most types of Article-like HTML.
 	 */
 	public static final ArticleExtractor ARTICLE_EXTRACTOR = ArticleExtractor.INSTANCE;
+    public static final ChineseArticleExtractor CHINESE_ARTICLE_EXTRACTOR = ChineseArticleExtractor.INSTANCE;
 
 	/**
 	 * Usually worse than {@link ArticleExtractor}, but simpler/no heuristics.
