@@ -42,11 +42,13 @@ public class demoMain {
         for(int i = 0; i < strs.size(); i++) {
             System.out.println(strs.get(i));
         }
-        //System.out.println(app.getTexts("http://www.chinanews.com/ty/2015/05-13/7274102.shtml"));
-        //System.out.println(app.getTexts("http://ent.people.com.cn/n/2015/0529/c1012-27076469.html"));
-        //System.out.println(app.getTexts("http://ent.sina.com.cn/y/ygangtai/2015-05-15/doc-icczmvup1760022.shtml"));
-        //System.out.println(app.getTexts("http://finance.sina.com.cn/stock/t/20150529/023922294284.shtml"));
+        System.out.println(app.getTexts("http://www.chinanews.com/ty/2015/05-13/7274102.shtml"));
+        System.out.println(app.getTexts("http://ent.people.com.cn/n/2015/0529/c1012-27076469.html"));
+        System.out.println(app.getTexts("http://ent.sina.com.cn/y/ygangtai/2015-05-15/doc-icczmvup1760022.shtml"));
+        System.out.println(app.getTexts("http://finance.sina.com.cn/stock/t/20150529/023922294284.shtml"));
         System.out.println(app.getTexts("http://video.sina.com.cn/p/ent/s/m/2015-05-29/145664999477.html"));
+        System.out.println(app.getTexts("http://shanghai.xinmin.cn/xmsq/2015/08/13/28368718.html"));
+        System.out.println(app.getTexts("http://www.chinanews.com/gn/2015/08-13/7465396.shtml"));
         //System.out.println(app.getTexts("http://www.chinanews.com/gn/2015/05-29/7308687.shtml"));
 
         //System.out.println(app.getTexts("http://news.ifeng.com/a/20150514/43758870_0.shtml?tp=1431532800000"));

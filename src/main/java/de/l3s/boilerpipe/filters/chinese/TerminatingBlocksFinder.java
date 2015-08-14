@@ -58,6 +58,7 @@ public class TerminatingBlocksFinder implements BoilerpipeFilter {
 							|| startsWithNumber(textLC, len, " comments",
 									" users responded in")
 							|| textLC.startsWith("�� reuters")
+                            || textLC.contains("关于我们")
 							|| textLC.startsWith("please rate this")
 							|| textLC.startsWith("post a comment")
 							|| textLC.contains("what you think...")
