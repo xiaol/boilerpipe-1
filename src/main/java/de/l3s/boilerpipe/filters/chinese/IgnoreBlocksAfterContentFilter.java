@@ -35,7 +35,7 @@ import java.util.Iterator;
  */
 public final class IgnoreBlocksAfterContentFilter extends HeuristicFilterBase implements BoilerpipeFilter {
     public static final IgnoreBlocksAfterContentFilter DEFAULT_INSTANCE = new IgnoreBlocksAfterContentFilter(
-            10);
+            5);
     public static final IgnoreBlocksAfterContentFilter INSTANCE_200 = new IgnoreBlocksAfterContentFilter(
             200);
     private final int minNumWords;
