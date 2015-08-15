@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
 public class ChineseTokenizer {
     private static final Pattern PAT_WORD_BOUNDARY = Pattern.compile("\\b");
     private static final Pattern PAT_NOT_WORD_BOUNDARY = Pattern
-            .compile("[\u2063]*([\\ \\-\\:\\(\\)\\·\\：\\<\\>\\|\\【\\】])[\u2063]*");
+            .compile("[\u2063]*([\\ \\-\\:\\(\\)\\·\\：\\<\\>\\|\\【\\】一二三四]\\。)[\u2063]*");
 
     /**
      * Tokenizes the text and returns an array of tokens.
