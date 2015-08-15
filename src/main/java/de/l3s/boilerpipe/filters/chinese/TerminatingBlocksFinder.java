@@ -64,6 +64,7 @@ public class TerminatingBlocksFinder implements BoilerpipeFilter {
 							|| textLC.contains("what you think...")
                             || textLC.contains("联系我们")
                             || textLC.contains("禁止转载")
+                            || textLC.contains("网站声明")
 							|| textLC.contains("add your comment")
 							|| textLC.contains("add comment")
 							|| textLC.contains("reader views")
