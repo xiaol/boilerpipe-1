@@ -65,8 +65,9 @@ public final class KeepLargestBlockFilter implements BoilerpipeFilter {
 		int n = -1;
 		for (TextBlock tb : textBlocks) {
 			if (tb.isContent()) {
-				final int nw = tb.getNumWords();
-				
+				//final int nw = tb.getNumWords();
+                final int nw = tb.getText().length();
+
 				if (nw > maxNumWords) {
 					largestBlock = tb;
 					maxNumWords = nw;
