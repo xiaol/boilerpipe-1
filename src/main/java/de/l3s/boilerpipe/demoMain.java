@@ -38,10 +38,10 @@ public class demoMain {
     public static void main(String[] args) throws Exception {
         demoMain app = new demoMain();
         //List<String> strs = app.getImages("http://hznews.hangzhou.com.cn/shehui/content/2015-03/25/content_5702863.htm");
-        List<String> strs = app.getImages("http://world.huanqiu.com/hot/2015-05/6424288.html");
-        for(int i = 0; i < strs.size(); i++) {
-            System.out.println(strs.get(i));
-        }
+        //List<String> strs = app.getImages("http://world.huanqiu.com/hot/2015-05/6424288.html");
+        //for(int i = 0; i < strs.size(); i++) {
+         //   System.out.println(strs.get(i));
+        //}
         /*System.out.println(app.getTexts("http://www.chinanews.com/ty/2015/05-13/7274102.shtml"));
         System.out.println(app.getTexts("http://ent.people.com.cn/n/2015/0529/c1012-27076469.html"));
         System.out.println(app.getTexts("http://ent.sina.com.cn/y/ygangtai/2015-05-15/doc-icczmvup1760022.shtml"));
@@ -53,7 +53,9 @@ public class demoMain {
         //System.out.println(app.getTexts("http://www.chinanews.com/gn/2015/05-29/7308687.shtml"));
         //System.out.println(app.getTexts("http://www.chinanews.com/yl/2015/08-14/7466874.shtml"));
         //System.out.println(app.getTexts("http://society.people.com.cn/n/2015/0814/c1008-27462647.html"));
-        System.out.println(app.getTexts("http://finance.sina.com.cn/china/dfjj/20150814/233822970717.shtml"));
+        //System.out.println(app.getTexts("http://finance.sina.com.cn/china/dfjj/20150814/233822970717.shtml"));
+        //System.out.println(app.getTexts("http://www.nbd.com.cn/articles/2015-08-15/938657.html"));
+        System.out.println(app.getTexts("http://ent.people.com.cn/n/2015/0815/c1012-27466196.html"));
 
         //System.out.println(app.getTexts("http://news.ifeng.com/a/20150514/43758870_0.shtml?tp=1431532800000"));
         //System.out.println(app.getTexts("http://news.vdfly.com/star/201505/441921.html"));

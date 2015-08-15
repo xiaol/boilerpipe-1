@@ -61,7 +61,7 @@ public class HTMLFetcher {
                     + ct + url);
 		}
 
-		Charset cs = Charset.forName("Cp1252");
+		Charset cs = Charset.forName("GB2312");
 		if (ct != null) {
 			Matcher m = PAT_CHARSET.matcher(ct);
 			if (m.find()) {
