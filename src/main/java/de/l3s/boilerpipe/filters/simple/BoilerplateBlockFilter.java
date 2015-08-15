@@ -35,7 +35,11 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
 			null);
 	public static final BoilerplateBlockFilter INSTANCE_KEEP_TITLE = new BoilerplateBlockFilter(
 			DefaultLabels.TITLE);
-	private final String labelToKeep;
+    public static final BoilerplateBlockFilter INSTANCE_TRIM = new BoilerplateBlockFilter(
+            true);
+
+	private  String labelToKeep;
+    private  boolean isTrim = false;
 
 	/**
 	 * Returns the singleton instance for BoilerplateBlockFilter.
@@ -47,6 +51,10 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
 	public BoilerplateBlockFilter(final String labelToKeep) {
 		this.labelToKeep = labelToKeep;
 	}
+
+    public BoilerplateBlockFilter(boolean isTrim) {
+        this.isTrim = isTrim;
+    }
 
 	public boolean process(TextDocument doc)
 			throws BoilerpipeProcessingException {
@@ -60,7 +68,20 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
 							.hasLabel(DefaultLabels.TITLE))) {
 				it.remove();
 				hasChanges = true;
-			}
+			}else if(isTrim){
+                final String text = tb.getText().trim();
+                final String textLC = text.toLowerCase();
+                if (textLC.contains("手机看新闻")
+                        || textLC.contains("点击数")
+                        || textLC.contains("来源")
+                        || textLC.contains("关键字")
+                        || textLC.contains("原标题")
+                        ){
+                    it.remove();
+                    //tb.setIsContent(false);
+                    hasChanges = true;
+                }
+            }
 		}
 
 		return hasChanges;

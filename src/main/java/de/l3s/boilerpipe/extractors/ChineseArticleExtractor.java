@@ -47,6 +47,7 @@ public final class ChineseArticleExtractor extends ExtractorBase {
                 | new DocumentTitleMatchClassifier(doc.getTitle()).process(doc)
                 | NumWordsRulesClassifier.INSTANCE.process(doc)
                 | IgnoreBlocksAfterContentFilter.DEFAULT_INSTANCE.process(doc)
+                | BoilerplateBlockFilter.INSTANCE_TRIM.process(doc)
                 | TrailingHeadlineToBoilerplateFilter.INSTANCE.process(doc)
                 | BlockProximityFusion.MAX_DISTANCE_1_CONTENT_ONLY.process(doc)
                 | BoilerplateBlockFilter.INSTANCE_KEEP_TITLE.process(doc)
