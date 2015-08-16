@@ -49,10 +49,10 @@ public class TerminatingBlocksFinder implements BoilerpipeFilter {
 
 		for (TextBlock tb : doc.getTextBlocks()) {
 			final int numWords = tb.getNumWords();
-			if (numWords < 15) {
+			if (numWords < 50) {
 				final String text = tb.getText().trim();
 				final int len = text.length();
-				if (len >= 8) {
+				if (len >= 4) {
 					final String textLC = text.toLowerCase();
 					if (textLC.startsWith("comments")
 							|| startsWithNumber(textLC, len, " comments",
@@ -71,15 +71,35 @@ public class TerminatingBlocksFinder implements BoilerpipeFilter {
                             || textLC.contains("文章内容不代表")
                             || textLC.contains("此文属于")
                             || textLC.contains("网站声明")
+                            || textLC.contains("欢迎关注")
+                            || textLC.contains("热点新闻")
+                            || textLC.contains("热点关注")
+                            || textLC.contains("热门评论")
+                            || textLC.contains("热门跟帖")
+                            || textLC.contains("网友评论")
+                            || textLC.contains("热门图片")
+                            || textLC.contains("阅读推荐")
+                            || (textLC.contains("下载") && textLC.contains("客户端"))
+                            || textLC.contains("延伸阅读")
+                            || textLC.contains("精彩图片推荐")
+                            || textLC.contains("热点图片")
+                            || textLC.contains("条评论")
+                            || textLC.contains("频道精选")
                             || textLC.contains("我要反馈")
                             || textLC.contains("下方二维码")
                             || textLC.contains("下一页")
-                            || textLC.contains("更多精彩内容")
+                            || textLC.contains("更多精彩")
+                            || textLC.contains("更多评论")
                             || textLC.contains("热门关键词")
                             || textLC.contains("版权作品")
+                            || textLC.contains("相关图集")
+                            || textLC.contains("查看更多")
                             || textLC.contains("特别提醒")
                             || textLC.contains("版权与免责声明")
+                            || textLC.contains("版权所有")
+                            || textLC.contains("相关新闻")
                             || textLC.contains("严禁转载")
+                            //|| textLC.contains("http://")
 							|| textLC.contains("add your comment")
 							|| textLC.contains("add comment")
 							|| textLC.contains("reader views")

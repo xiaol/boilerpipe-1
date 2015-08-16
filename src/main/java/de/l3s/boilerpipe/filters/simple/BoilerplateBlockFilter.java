@@ -75,7 +75,17 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                         || textLC.contains("点击数")
                         || textLC.contains("来源")
                         || textLC.contains("关键字")
+                        || textLC.contains("关键词")
+                        || textLC.contains("字号")
                         || textLC.contains("原标题")
+                        || textLC.contains("http://")
+                        || textLC.contains("参与")
+                        || textLC.contains("我要举报")
+                        || textLC.contains("收藏本文")
+                        || textLC.contains("分享到")
+                        || textLC.matches("(.*[0-9]{4})[-./]([0-9]{2})[-./]([0-9]{2}.*)")
+                        || (textLC.contains("记者") && textLC.contains("报道") && (textLC.contains("（") || textLC.contains("(")))
+                        || (/*textLC.length()< 20 && */(textLC.contains("记者") || textLC.contains("报道") || textLC.contains("责编")) && (textLC.contains("【") || textLC.contains("（") || textLC.contains("(") || textLC.contains(":") || textLC.contains("：")))
                         ){
                     it.remove();
                     //tb.setIsContent(false);
