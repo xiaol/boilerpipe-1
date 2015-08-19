@@ -56,7 +56,10 @@ public class demoMain {
         //System.out.println(app.getTexts("http://i.ifeng.com/news/sharenews.f?aid=100545006"));
         //System.out.println(app.getTexts("http://world.people.com.cn/n/2015/0518/c1002-27014217.html"));
         //System.out.println(app.getTexts("http://news.hangzhou.com.cn/gjxw/content/2015-08/16/content_5885407.htm"));
-        System.out.println(app.getTexts("http://video.sina.com.cn/p/ent/s/h/2015-08-16/144965055599.html"));
+        //System.out.println(app.getTexts("http://video.sina.com.cn/p/ent/s/h/2015-08-16/144965055599.html"));
+        //System.out.println(app.getTexts("http://t.people.com.cn/globaltimes/128760559"));
+        //多图情况
+        System.out.println(app.getTexts("http://society.people.com.cn/n/2015/0819/c136657-27482230.html"));
         //System.out.println(app.getTexts("http://society.people.com.cn/n/2015/0815/c1008-27465689.html"));
         //System.out.println(app.getTexts("http://www.chinanews.com/yl/2015/08-14/7466874.shtml"));
         //System.out.println(app.getTexts("http://society.people.com.cn/n/2015/0814/c1008-27462647.html"));

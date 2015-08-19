@@ -78,7 +78,7 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                         || textLC.contains("关键词")
                         || textLC.contains("字号")
                         || textLC.contains("原标题")
-                        || textLC.contains("http://")
+                        || (textLC.length()< 70 && textLC.contains("http://"))
                         || textLC.contains("参与")
                         || textLC.contains("我要举报")
                         || textLC.contains("收藏本文")
@@ -87,10 +87,11 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                         || textLC.contains("标签")
                         || textLC.contains("简介")
                         || textLC.contains("频道")
+                        || (textLC.length()< 70 && (textLC.contains(" 摄") || textLC.contains("(图)") || textLC.contains("（图）")  || textLC.contains("摄影：")  || textLC.contains("摄影:")))
                         || ((textLC.contains("在线")|| textLC.contains("作者")) && textLC.contains("("))
                         || textLC.matches("(.*[0-9]{4})[-./]([0-9]{2})[-./]([0-9]{2}.*)")
                         || (textLC.contains("记者") && textLC.contains("报道") && (textLC.contains("（") || textLC.contains("(")))
-                        || (/*textLC.length()< 20 && */(textLC.contains("记者") || textLC.contains("报道") || textLC.contains("责编")) && (textLC.contains("【") || textLC.contains("（") || textLC.contains("(") || textLC.contains(":") || textLC.contains("：")))
+                        || (/*textLC.length()< 20 && */(textLC.contains("编辑") || textLC.contains("记者") || textLC.contains("报道") || textLC.contains("责编")) && (textLC.contains("【") || textLC.contains("[") || textLC.contains("（") || textLC.contains("(") || textLC.contains(":") || textLC.contains("：")))
                         ){
                     it.remove();
                     //tb.setIsContent(false);
