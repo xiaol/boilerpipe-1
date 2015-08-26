@@ -74,6 +74,9 @@ public class HTMLFetcher {
         //DefaultHttpClient httpclient = new DefaultHttpClient();
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet request = new HttpGet(url.toString());
+        request.setHeader("User-Agent",
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.104 Safari/537.36");
+        request.setHeader("Referer", "http://www.google.com");
 
         HttpResponse response = httpclient.execute(request);
         HttpEntity  entity= response.getEntity();
@@ -112,6 +115,9 @@ public class HTMLFetcher {
         }
 
         HttpGet request2 = new HttpGet(url.toString());
+        request2.setHeader("User-Agent",
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.104 Safari/537.36");
+        request2.setHeader("Referer", "http://www.google.com");
 
         HttpResponse response2 = httpclient.execute(request2);
         HttpEntity  entity2= response2.getEntity();
