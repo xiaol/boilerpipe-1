@@ -94,6 +94,8 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                         || textLC.contains("当前位置")
                         || textLC.contains("本网站")
                         || textLC.contains("未经授权")
+                        || textLC.contains("正在浏览")
+                        || textLC.contains("文字大小")
                         || textLC.contains("公网安备")
                         || textLC.contains("添加免费阅读")
                         || textLC.contains("分享到")

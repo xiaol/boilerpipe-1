@@ -94,10 +94,10 @@ public class HTMLFetcher {
 
         StringBuilder builder = new StringBuilder();
         String aux = "";
-        Charset cs = Charset.forName("gb2312");
+        Charset cs = Charset.forName("utf8");
         boolean charsetFlag = false;
         while ((aux = rd.readLine()) != null) {
-            if (aux != null && !charsetFlag && aux.contains("http-equiv")) {
+            if (aux != null && !charsetFlag && (aux.contains("http-equiv") || !aux.contains("src"))) {
                 Matcher m = PAT_CHARSET_REX.matcher(aux);
                 if (m.find()) {
                     final String cName = m.group(1);
