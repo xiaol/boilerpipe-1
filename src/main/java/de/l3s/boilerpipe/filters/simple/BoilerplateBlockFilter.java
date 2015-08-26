@@ -71,7 +71,13 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
 			}else if(isTrim){
                 final String text = tb.getText().trim();
                 final String textLC = text.toLowerCase();
+                final String titleLC = doc.getTitle().trim().toLowerCase();
+                if(textLC.length() > 120 && !textLC.contains("摘要") && textLC.contains("，"))
+                    continue;
+
                 if (textLC.contains("手机看新闻")
+                        || (textLC.length() > 120 && !textLC.contains("，"))
+                        || (textLC.length() < 30 && textLC.startsWith("• "))
                         || textLC.contains("点击数")
                         || textLC.contains("来源")
                         || textLC.contains("关键字")
@@ -82,6 +88,9 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                         || textLC.contains("参与")
                         || textLC.contains("我要举报")
                         || textLC.contains("收藏本文")
+                        || textLC.contains("在线投稿")
+                        || textLC.contains(titleLC)
+                        || titleLC.contains(textLC)
                         || textLC.contains("当前位置")
                         || textLC.contains("本网站")
                         || textLC.contains("未经授权")
@@ -89,6 +98,7 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                         || textLC.contains("添加免费阅读")
                         || textLC.contains("分享到")
                         || textLC.contains("编辑短信")
+                        || textLC.contains("移动发短信")
                         || (textLC.contains("短信") && textLC.contains("提醒"))
                         || (textLC.length()< 10 && textLC.contains("正在播放"))
                         || textLC.length()< 3
@@ -101,6 +111,7 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                         || textLC.contains("提要")
                         || textLC.contains("摘要")
                         || textLC.contains("频道")
+                        || textLC.contains("copyright")
                         || (textLC.length()< 70 && (textLC.contains(" 摄") || textLC.contains("图)")
                                                                            || textLC.contains("图）")
                                                                            || textLC.contains("组图")

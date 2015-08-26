@@ -92,6 +92,7 @@ public class TerminatingBlocksFinder implements BoilerpipeFilter {
                             || textLC.contains("下方二维码")
                             || textLC.contains("下一页")
                             || textLC.contains("更多精彩")
+                            || textLC.contains("返回首页")
                             || textLC.contains("更多评论")
                             || textLC.contains("更多酷图")
                             || textLC.contains("热门关键词")

@@ -61,8 +61,13 @@ public class demoMain {
         //多图情况
         //System.out.println(app.getTexts("http://society.people.com.cn/n/2015/0819/c136657-27482230.html"));
         //System.out.println(app.getTexts("http://www.hinews.cn/news/system/2015/08/18/017770842.shtml"));
-        //System.out.println(app.getTexts("http://www.chinanews.com/ty/shipin/2015/08-20/news592773.shtml"));
+        //System.out.println(app.getTexts("http://legal.dbw.cn/system/2015/08/26/056773962.shtml"));
+        /*System.out.println(app.getTexts("http://www.chinanews.com/ty/shipin/2015/08-20/news592773.shtml"));
         System.out.println(app.getTexts("http://laoyaoba.com/ss6/html/59/n-569659.html"));
+        System.out.println(app.getTexts("http://gd.sina.com.cn/fs/tushuo/2015-08-24/164738087.html"));
+        System.out.println(app.getTexts("http://fun.youth.cn/2015/0825/1852997.shtml"));
+        //乱码情况
+        System.out.println(app.getTexts("http://www.xilu.com/news/jixiantiaozhanyanbo_2.html"));*/
         //System.out.println(app.getTexts("http://society.people.com.cn/n/2015/0815/c1008-27465689.html"));
         //System.out.println(app.getTexts("http://www.chinanews.com/yl/2015/08-14/7466874.shtml"));
         //System.out.println(app.getTexts("http://society.people.com.cn/n/2015/0814/c1008-27462647.html"));
