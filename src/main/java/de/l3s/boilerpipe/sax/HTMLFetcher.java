@@ -36,6 +36,10 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.entity.ContentType;
 
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+
 /**
  * A very simple HTTP/HTML fetcher, really just for demo purposes.
  * 
@@ -59,6 +63,7 @@ public class HTMLFetcher {
 	 */
 	public static HTMLDocument fetch(final URL url) throws IOException {
         return fetch(url.toString());
+        //return fetchOk(url.toString());
 
         //return fetchHelper(url);
 
@@ -72,7 +77,6 @@ public class HTMLFetcher {
 
         HttpResponse response = httpclient.execute(request);
         HttpEntity  entity= response.getEntity();
-        entity.getContentType();
         //System.out.println("Response Code: " +
                 //response.getStatusLine().getStatusCode());
         ContentType contentType = ContentType.getOrDefault(entity);
@@ -80,7 +84,6 @@ public class HTMLFetcher {
         if (charset == null) {
             charset = Charset.forName("gb2312");
         }
-        System.out.println(charset);
 
         BufferedReader rd = new BufferedReader(
                 new InputStreamReader(entity.getContent(), charset));
@@ -124,7 +127,7 @@ public class HTMLFetcher {
         }
 
         String text = builder.toString();
-        System.out.println(text);
+        //System.out.println(text);
         rd.close();
         rd2.close();
         return new HTMLDocument(text, cs);
@@ -184,5 +187,14 @@ public class HTMLFetcher {
         return new HTMLDocument(data, cs);
     }
 
+    public static HTMLDocument fetchOk(final String url) throws IOException{
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder().url(url).build();
 
+        Response response = client.newCall(request).execute();
+
+        String data = response.body().string();
+        Charset cs = response.body().contentType().charset();
+        return new HTMLDocument(data, cs);
+    }
 }
