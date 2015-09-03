@@ -52,7 +52,7 @@ public class TerminatingBlocksFinder implements BoilerpipeFilter {
 			if (numWords < 50) {
 				final String text = tb.getText().trim();
 				final int len = text.length();
-				if (len >= 4) {
+				if (len >= 4 && len < 130) {
 					final String textLC = text.toLowerCase();
 					if (textLC.startsWith("comments")
 							|| startsWithNumber(textLC, len, " comments",
@@ -82,7 +82,7 @@ public class TerminatingBlocksFinder implements BoilerpipeFilter {
                             || textLC.contains("热门图片")
                             || textLC.contains("阅读推荐")
                             || (textLC.contains("下载") && textLC.contains("客户端"))
-                            || (textLC.contains("不代表") && textLC.contains("观点"))
+                            //|| (textLC.contains("不代表") && textLC.contains("观点"))
                             || textLC.contains("延伸阅读")
                             || textLC.contains("精彩图片推荐")
                             || textLC.contains("热点图片")
@@ -92,14 +92,20 @@ public class TerminatingBlocksFinder implements BoilerpipeFilter {
                             || textLC.contains("下方二维码")
                             || textLC.contains("下一页")
                             || textLC.contains("更多精彩")
+                            || textLC.contains("尾页")
                             || textLC.contains("返回首页")
+                            || textLC.contains("猜你感兴趣")
+                            || textLC.contains("每周排行")
+                            || textLC.contains("每日排行")
                             || textLC.contains("更多评论")
                             || textLC.contains("更多酷图")
                             || textLC.contains("热门关键词")
                             || textLC.contains("版权作品")
                             || textLC.contains("相关图集")
+                            || textLC.contains("相关阅读")
                             || textLC.contains("相关报道")
                             || textLC.contains("相关稿件")
+                            || textLC.contains("相关推荐")
                             || textLC.contains("相关链接")
                             || textLC.contains("相关专题")
                             || textLC.contains("查看更多")
@@ -109,16 +115,16 @@ public class TerminatingBlocksFinder implements BoilerpipeFilter {
                             || textLC.contains("copyright")
                             || textLC.contains("版权所有")
                             || textLC.contains("版权声明")
-                            || textLC.contains("声明:")
-                            || textLC.contains("声明：")
+                            //|| textLC.contains("声明:")
+                            //|| textLC.contains("声明：")
                             || textLC.contains("注明出处")
                             || textLC.contains("相关新闻")
-                            || textLC.contains("欢迎提供")
+                            //|| textLC.contains("欢迎提供")
                             || textLC.contains("严禁转载")
                             || textLC.contains("进行评论")
                             || textLC.contains("正文已结束")
                             || textLC.contains("微信扫一扫")
-                            || textLC.contains("本文")
+                            //|| textLC.contains("本文")
                             //|| textLC.contains("http://")
 							|| textLC.contains("add your comment")
 							|| textLC.contains("add comment")
@@ -177,5 +183,8 @@ public class TerminatingBlocksFinder implements BoilerpipeFilter {
 	private static boolean isDigit(final char c) {
 		return c >= '0' && c <= '9';
 	}
+
+
+
 
 }

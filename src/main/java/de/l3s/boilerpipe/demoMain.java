@@ -14,7 +14,7 @@ import java.util.List;
  * Created by ivan liu on 15/5/11.
  */
 public class demoMain {
-    private final BoilerpipeExtractor extractor = CommonExtractors.CHINESE_ARTICLE_EXTRACTOR;
+    private final BoilerpipeExtractor extractor = CommonExtractors.CHINESE_IMAGE_EXTRACTOR;
     private final ImageExtractor ie = ImageExtractor.INSTANCE;
     private final ChineseArticleExtractor ae = ChineseArticleExtractor.INSTANCE;
 
@@ -38,10 +38,11 @@ public class demoMain {
     public static void main(String[] args) throws Exception {
         demoMain app = new demoMain();
         //List<String> strs = app.getImages("http://hznews.hangzhou.com.cn/shehui/content/2015-03/25/content_5702863.htm");
-        //List<String> strs = app.getImages("http://world.huanqiu.com/hot/2015-05/6424288.html");
-        //for(int i = 0; i < strs.size(); i++) {
-         //   System.out.println(strs.get(i));
-        //}
+        //List<String> strs = app.getImages("http://society.people.com.cn/n/2015/0819/c136657-27482230.html");
+        //List<String> strs = app.getImages("http://news.ifeng.com/a/20150514/43758870_0.shtml?tp=1431532800000");
+        /*for(int i = 0; i < strs.size(); i++) {
+            System.out.println(strs.get(i));
+        }*/
         /*System.out.println(app.getTexts("http://www.chinanews.com/ty/2015/05-13/7274102.shtml"));
         System.out.println(app.getTexts("http://ent.people.com.cn/n/2015/0529/c1012-27076469.html"));
         System.out.println(app.getTexts("http://ent.sina.com.cn/y/ygangtai/2015-05-15/doc-icczmvup1760022.shtml"));
@@ -60,13 +61,23 @@ public class demoMain {
         //System.out.println(app.getTexts("http://t.people.com.cn/globaltimes/128760559"));
         //多图情况
         //System.out.println(app.getTexts("http://society.people.com.cn/n/2015/0819/c136657-27482230.html"));
+        /*System.out.println(app.getTexts("http://it.people.com.cn/n/2015/0902/c1009-27539987.html"));
+        System.out.println(app.getTexts("http://sports.sohu.com/20150413/n411171274.shtml"));
+        System.out.println(app.getTexts("http://sports.sohu.com/20121120/n358123051.shtml"));
+        System.out.println(app.getTexts("http://www.huxiu.com/group/thread/145207.html"));
+        System.out.println(app.getTexts("http://money.hexun.com/2015-09-01/178767019.html"));
+        System.out.println(app.getTexts("http://www.php100.com/html/it/chengxuyuan/2015/0121/8436.html"));
+        System.out.println(app.getTexts("http://ent.ifeng.com/a/20150830/42483754_0.shtml"));
+        System.out.println(app.getTexts("http://mt.sohu.com/20150830/n420060982.shtml"));
+        System.out.println(app.getTexts("http://business.sohu.com/20050326/n224874029.shtml"));
         System.out.println(app.getTexts("http://news.ifeng.com/a/20150826/44522861_0.shtml"));
         System.out.println(app.getTexts("http://www.hinews.cn/news/system/2015/08/18/017770842.shtml"));
         System.out.println(app.getTexts("http://legal.dbw.cn/system/2015/08/26/056773962.shtml"));
         System.out.println(app.getTexts("http://www.chinanews.com/ty/shipin/2015/08-20/news592773.shtml"));
         System.out.println(app.getTexts("http://laoyaoba.com/ss6/html/59/n-569659.html"));
-        System.out.println(app.getTexts("http://gd.sina.com.cn/fs/tushuo/2015-08-24/164738087.html"));
-        System.out.println(app.getTexts("http://fun.youth.cn/2015/0825/1852997.shtml"));
+        System.out.println(app.getTexts("http://gd.sina.com.cn/fs/tushuo/2015-08-24/164738087.html"));*/
+        System.out.println(app.getTexts("http://news.candou.com/600444_18.shtml"));
+        //System.out.println(app.getTexts("http://fun.youth.cn/2015/0825/1852997.shtml"));
         //乱码情况
         System.out.println(app.getTexts("http://www.xilu.com/news/jixiantiaozhanyanbo_2.html"));
         //System.out.println(app.getTexts("http://society.people.com.cn/n/2015/0815/c1008-27465689.html"));

@@ -125,6 +125,8 @@ public class HTMLFetcher {
         charset = contentType.getCharset();
         if(charset == null)
             charset = cs;
+        //if(charset.name().toLowerCase().equals("gb2312"))
+        //   charset = Charset.forName("gbk");
         BufferedReader rd2 = new BufferedReader(
                 new InputStreamReader(entity2.getContent(), charset));
         while ((aux = rd2.readLine()) != null) {
@@ -136,7 +138,7 @@ public class HTMLFetcher {
         //System.out.println(text);
         rd.close();
         rd2.close();
-        return new HTMLDocument(text, cs);
+        return new HTMLDocument(text, cs);  //sometimes cs not equal to charset
     }
 
     public static HTMLDocument fetchHelper(final URL url) throws IOException {

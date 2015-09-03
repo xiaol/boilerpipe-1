@@ -31,6 +31,7 @@ public final class CommonExtractors {
 	 */
 	public static final ArticleExtractor ARTICLE_EXTRACTOR = ArticleExtractor.INSTANCE;
     public static final ChineseArticleExtractor CHINESE_ARTICLE_EXTRACTOR = ChineseArticleExtractor.INSTANCE;
+    public static final ChineseImageExtractor CHINESE_IMAGE_EXTRACTOR = ChineseImageExtractor.INSTANCE;
 
 	/**
 	 * Usually worse than {@link ArticleExtractor}, but simpler/no heuristics.
