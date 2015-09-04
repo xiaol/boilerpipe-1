@@ -61,10 +61,13 @@ public class demoMain {
         //System.out.println(app.getTexts("http://t.people.com.cn/globaltimes/128760559"));
         //多图情况
         //System.out.println(app.getTexts("http://society.people.com.cn/n/2015/0819/c136657-27482230.html"));
-        /*System.out.println(app.getTexts("http://it.people.com.cn/n/2015/0902/c1009-27539987.html"));
+        System.out.println(app.getTexts("http://it.people.com.cn/n/2015/0902/c1009-27539987.html"));
         System.out.println(app.getTexts("http://sports.sohu.com/20150413/n411171274.shtml"));
         System.out.println(app.getTexts("http://sports.sohu.com/20121120/n358123051.shtml"));
+        //最长回文bug
         System.out.println(app.getTexts("http://www.huxiu.com/group/thread/145207.html"));
+        //回文
+        System.out.println(app.getTexts("http://news.candou.com/600444_18.shtml"));
         System.out.println(app.getTexts("http://money.hexun.com/2015-09-01/178767019.html"));
         System.out.println(app.getTexts("http://www.php100.com/html/it/chengxuyuan/2015/0121/8436.html"));
         System.out.println(app.getTexts("http://ent.ifeng.com/a/20150830/42483754_0.shtml"));
@@ -75,8 +78,8 @@ public class demoMain {
         System.out.println(app.getTexts("http://legal.dbw.cn/system/2015/08/26/056773962.shtml"));
         System.out.println(app.getTexts("http://www.chinanews.com/ty/shipin/2015/08-20/news592773.shtml"));
         System.out.println(app.getTexts("http://laoyaoba.com/ss6/html/59/n-569659.html"));
-        System.out.println(app.getTexts("http://gd.sina.com.cn/fs/tushuo/2015-08-24/164738087.html"));*/
-        System.out.println(app.getTexts("http://news.candou.com/600444_18.shtml"));
+        System.out.println(app.getTexts("http://gd.sina.com.cn/fs/tushuo/2015-08-24/164738087.html"));
+        System.out.println(app.getTexts("http://news.xinhuanet.com/tech/2015-09/02/c_1116454646.htm"));
         //System.out.println(app.getTexts("http://fun.youth.cn/2015/0825/1852997.shtml"));
         //乱码情况
         System.out.println(app.getTexts("http://www.xilu.com/news/jixiantiaozhanyanbo_2.html"));

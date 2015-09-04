@@ -18,11 +18,13 @@ package de.l3s.boilerpipe.filters.simple;
 import java.util.Iterator;
 import java.util.List;
 
+
 import de.l3s.boilerpipe.BoilerpipeFilter;
 import de.l3s.boilerpipe.BoilerpipeProcessingException;
 import de.l3s.boilerpipe.document.TextBlock;
 import de.l3s.boilerpipe.document.TextDocument;
 import de.l3s.boilerpipe.labels.DefaultLabels;
+import de.l3s.boilerpipe.util.SuffixArray;
 
 /**
  * Removes {@link TextBlock}s which have explicitly been marked as
@@ -74,13 +76,25 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                 final String titleLC = doc.getTitle().trim().toLowerCase();
                 if(textLC.length() > 120 && !textLC.contains("摘要") && textLC.contains("，") && !textLC.contains("http://"))
                     continue;
-                String lpd ="";
-                if(textLC.length() < 30)
-                    lpd = longestPalindrome1(textLC);
+                String lcs = "";
+                if(textLC.length() < 30) {
+                    // compute suffix array of concatenated text
+                    SuffixArray suffix = new SuffixArray(textLC);
+
+                    // search for longest common substring
+                    for (int i = 1; i < textLC.length(); i++) {
+
+                        // check if adjacent suffixes longer common substring
+                        int length = suffix.lcp(i);
+                        if (length > lcs.length()) {
+                            lcs = text.substring(suffix.index(i), suffix.index(i) + length);
+                        }
+                    }
+                }
 
                 if (textLC.contains("手机看新闻")
                         || (textLC.length() > 120 && !textLC.contains("，"))
-                        || (textLC.length() < 30 && textLC.startsWith("• "))
+                        || (textLC.length() < 30 && (textLC.startsWith("• ") || textLC.startsWith("·")))
                         || textLC.contains("点击数")
                         || textLC.contains("来源")
                         || textLC.contains("关键字")
@@ -93,7 +107,7 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                         || textLC.contains("字体")
                         || (textLC.length() - textLC.replaceAll("【","").length()) > 4
                         || ((textLC.length() - textLC.replaceAll("\\||>","").length()) > 3 )
-                        || (lpd.length() > 1  && (textLC.length() - textLC.replaceAll(lpd,"").length()) < 8 )
+                        || (lcs.length() > 1  && (textLC.length() - textLC.replaceAll(lcs,"").length()) < 8 )
                         || textLC.contains("原标题")
                         || (textLC.length()< 70 && textLC.contains("http://"))
                         || textLC.contains("参与")
@@ -112,6 +126,7 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                         || (textLC.contains("report") && textLC.contains("true"))
                         || textLC.contains("未经授权")
                         || textLC.contains("点击下载")
+                        || (textLC.contains("下载") && textLC.contains("客户端"))
                         || textLC.contains("本页面")
                         || textLC.contains("正在浏览")
                         || textLC.contains("发表成功")
@@ -159,7 +174,7 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                         || textLC.matches("([0-9]{2})[-./]([0-9]{2}.*)")
                         || (textLC.matches("(图[0-9]{1,2}：.*)") && textLC.length() < 30)
                         || (textLC.contains("记者") && textLC.contains("报道") && (textLC.contains("（") || textLC.contains("(")))
-                        || (/*textLC.length()< 20 && */(textLC.contains("编辑") || textLC.contains("记者") || textLC.contains("报道") || textLC.contains("责编")) && (textLC.contains("【") || textLC.contains("/") || textLC.contains("[") || textLC.contains("（") || textLC.contains("(") || textLC.contains(":") || textLC.contains("：")))
+                        || (textLC.length()< 50 && (textLC.contains("编辑") || textLC.contains("记者") || textLC.contains("报道") || textLC.contains("责编")) && (textLC.contains("【") || textLC.contains("/") || textLC.contains("[") || textLC.contains("（") || textLC.contains("(") || textLC.contains(":") || textLC.contains("：")))
                         ){
                     it.remove();
                     //tb.setIsContent(false);
@@ -274,4 +289,5 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
 
         return s.substring(maxIndex,maxIndex+maxLen);
     }
+
 }

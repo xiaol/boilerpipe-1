@@ -81,7 +81,7 @@ public class TerminatingBlocksFinder implements BoilerpipeFilter {
                             || textLC.contains("网友评论")
                             || textLC.contains("热门图片")
                             || textLC.contains("阅读推荐")
-                            || (textLC.contains("下载") && textLC.contains("客户端"))
+                            //|| (textLC.contains("下载") && textLC.contains("客户端"))
                             //|| (textLC.contains("不代表") && textLC.contains("观点"))
                             || textLC.contains("延伸阅读")
                             || textLC.contains("精彩图片推荐")

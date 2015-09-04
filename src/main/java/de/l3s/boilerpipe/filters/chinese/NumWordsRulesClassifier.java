@@ -80,7 +80,7 @@ public class NumWordsRulesClassifier implements BoilerpipeFilter {
 
         if (curr.getLinkDensity() <= 0.333333 || (curr.getTextDensity() >= 3.0 && curr.getText().length()/curr.getText().split("\\s+").length > 5)) {
             if ((prev.getLinkDensity() <= 0.555556  || prev.getTextDensity() >= 3.0) && curr.getNumWords() > 1) {
-                if (curr.getNumWords() <= 6) {
+                if (curr.getNumWords() <= 6 && curr.getText().length()/curr.getNumWords() < 15) {
                     if (next.getNumWords() <= 4) {
                         if (prev.getNumWords() <= 1) {
                             isContent = false;
