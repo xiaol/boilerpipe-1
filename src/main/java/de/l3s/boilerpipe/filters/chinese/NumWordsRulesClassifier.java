@@ -78,7 +78,9 @@ public class NumWordsRulesClassifier implements BoilerpipeFilter {
             final TextBlock next) {
         final boolean isContent;
 
-        if (curr.getLinkDensity() <= 0.333333 || (curr.getTextDensity() >= 3.0 && curr.getText().length()/curr.getText().split("\\s+").length > 5)) {
+        if (curr.getLinkDensity() <= 0.333333
+                || (curr.getText().endsWith(":") || curr.getText().endsWith("："))
+                || (curr.getTextDensity() >= 3.0 && curr.getText().length()/curr.getText().split("\\s+").length > 5)) {
             if ((prev.getLinkDensity() <= 0.555556  || prev.getTextDensity() >= 3.0) && curr.getNumWords() > 1) {
                 if (curr.getNumWords() <= 6 && curr.getText().length()/curr.getNumWords() < 15) {
                     if (next.getNumWords() <= 4) {

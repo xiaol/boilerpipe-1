@@ -93,7 +93,7 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                 }
 
                 if (textLC.contains("手机看新闻")
-                        || (textLC.length() > 120 && !textLC.contains("，"))
+                        || (textLC.length() > 120 && (!textLC.contains("，") && (textLC.length() - textLC.replaceAll("\\.|。","").length()) < 2 ))
                         || (textLC.length() < 30 && (textLC.startsWith("• ") || textLC.startsWith("·")))
                         || textLC.contains("点击数")
                         || textLC.contains("来源")
@@ -122,6 +122,9 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                         || textLC.contains(titleLC)
                         || titleLC.contains(textLC)
                         || textLC.contains("当前位置")
+                        || textLC.contains("当前的位置")
+                        || textLC.contains("QQ群：")
+                        || textLC.contains("QQ群:")
                         || textLC.contains("本网站")
                         || (textLC.contains("report") && textLC.contains("true"))
                         || textLC.contains("未经授权")
@@ -138,6 +141,7 @@ public final class BoilerplateBlockFilter implements BoilerpipeFilter {
                         || textLC.contains("点击进入")
                         || textLC.contains("声明:")
                         || textLC.contains("声明：")
+                        || textLC.contains("经营许可证号")
                         || textLC.contains("添加免费阅读")
                         || textLC.contains("分享到")
                         || textLC.contains("编辑短信")
